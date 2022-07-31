@@ -130,6 +130,9 @@ double Sgp4::visiblewrap(double jdCe)
 
   phi = acos(dot(rearth, rsunsat) / magsunsat / magearth);
 
+  (void)rnomearth;
+  (void)rnomsun;
+
   return phi - phisun - phiearth; /// grens op bijschaduw
   // return -phiearth + phisun + phi;  ///grens op echte schaduw
 }
@@ -192,6 +195,9 @@ int16_t Sgp4::visible(bool &notdark, double &deltaphi)
       return (int16_t)((1 - phiearth * (phisun - phi + phiearth) / (2.0 * phisun * phisun)) * 1000); // approach to the surface coverage with a square sun and earth
     }
   }
+
+  (void)rnomearth;
+  (void)rnomsun;
 
   return 1000; // no eclipse => visible
 }

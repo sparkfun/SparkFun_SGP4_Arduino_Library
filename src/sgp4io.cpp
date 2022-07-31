@@ -277,6 +277,30 @@ void twoline2rv(
   sgp4init(whichconst, opsmode, satrec.satnum, satrec.jdsatepoch - 2433281.5, satrec.bstar,
            satrec.ecco, satrec.argpo, satrec.inclo, satrec.mo, satrec.no,
            satrec.nodeo, satrec);
+
+  (void)startsec;
+  (void)stopsec;
+  (void)startdayofyr;
+  (void)stopdayofyr;
+  (void)stopday;
+  (void)jdstart;
+  (void)jdstop;
+  (void)startyear;
+  (void)stopyear;
+  (void)startmon;
+  (void)stopmon;
+  (void)startday;
+  (void)stopday;
+  (void)starthr;
+  (void)stophr;
+  (void)startmin;
+  (void)stopmin;
+  (void)cardnumb;
+  (void)numb;
+  (void)revnum;
+  (void)elnum;
+  (void)classification;
+  (void)intldesg;
 } // end twoline2rv
 
 /* -----------------------------------------------------------------------------

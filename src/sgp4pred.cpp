@@ -93,6 +93,9 @@ void Sgp4::findsat(double jdI)
   {
     satVis = -2; // under horizon
   }
+
+  (void)vecef;
+  (void)razelrates;
 }
 
 void Sgp4::findsat(unsigned long unix)

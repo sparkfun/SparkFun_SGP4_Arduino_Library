@@ -1103,6 +1103,7 @@ static void dspace(
   }
 
   //#include "debug4.cpp"
+  (void)iret;
 } // end dsspace
 
 /*-----------------------------------------------------------------------------
