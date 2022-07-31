@@ -153,8 +153,11 @@ bool Sgp4::nextpass(passinfo *passdata, int itterations, bool direc, double mini
     jump = 1.0 / revpday;
   }
 
-  for (i = 0; i < itterations && max_elevation <= (minimumElevation * pi / 180); i++)
-  { // search for elevation above minimumElevation
+  if (minimumElevation > 0.0)
+    offset = minimumElevation * pi / 180.0;
+
+  for (i = 0; i < itterations && max_elevation <= 0.0; i++)
+  { // search for elevation above zero
     jdCp += jump;
     max_elevation = -brentmin(jdCp - range, jdCp, jdCp + range, &Sgp4::sgp4wrap, tol, &jdCp, this);
 #ifdef ESP8266
