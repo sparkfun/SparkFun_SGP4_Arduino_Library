@@ -25,7 +25,7 @@ double brentmin(double ax, double bx, double cx, double (Sgp4::*f)(double), doub
 {
 
   int iter;
-  double a, b, d, etemp, fu, fv, fw, fx, p, q, r, tol1, tol2, u, v, w, x, xm;
+  double a, b, d = 0.0, etemp, fu, fv, fw, fx, p, q, r, tol1, tol2, u, v, w, x, xm;
   double e = 0.0; // This will be the distance moved on the step before last.
 
   a = (ax < cx ? ax : cx); // a and b must be in ascending order,
@@ -110,7 +110,7 @@ double zbrent(double (Sgp4::*func)(double), double x1, double x2, double tol, Sg
 // root, returned as zbrent, will be refined until its accuracy is tol.
 {
   int iter;
-  double a = x1, b = x2, c = x2, d, e, min1, min2;
+  double a = x1, b = x2, c = x2, d = 0.0, e = 0.0, min1, min2;
   double fa = (obj->*func)(a), fb = (obj->*func)(b), fc, p, q, r, s, tol1, xm;
 
   if ((fa > 0.0 && fb > 0.0) || (fa < 0.0 && fb < 0.0))
